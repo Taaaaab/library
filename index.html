@@ -14,11 +14,50 @@
             Library
         </div>
         <div class="body">
-            <div id="bookCard" class="bookCard">
-                <div id="card1" class="card"></div>
-                <div id="card2" class="card"></div>
-                <div id="card3" class="card"></div>
+            <div id="gridContainer" class="grid-container">
+                <div class="card-box" id="card-box">
+                    <div id="card1"></div>
+                    <button id="deleteBook" class="deleteBook">Remove</button>
+                </div>
+                <div class="card-box" id="card-box">
+                    <div id="card2"></div>
+                    <button id="deleteBook" class="deleteBook">Remove</button>
+                </div>
+                <div class="card-box" id="card-box">
+                    <div id="card3"></div>
+                    <button id="deleteBook" class="deleteBook">Remove</button>
+                </div>
+                <form action="" method="get" class="form-book" id="form" style="display: none">
+                    <div class="form-book">
+                      <label for="title">Title:</label>
+                      <input type="text" name="title" id="title" required>
+                    </div>
+                    <div class="form-book">
+                      <label for="author">Author:</label>
+                      <input type="text" name="author" id="author" required>
+                    </div>
+                    <div class="form-book">
+                        <label for="pages">Pages:</label>
+                        <input type="text" name="pages" id="pages" required>
+                    </div>
+                    <div class="form-book">
+                        <fieldset>
+                        <legend>Have Read?:</legend>
+                        <div>
+                            <input type="radio" id="yes" value="yes" name="read" checked>
+                            <label for="yes">Yes</label>
+                        </div>
+                        <div>
+                            <input type="radio" id="no" value="no" name="read">
+                            <label for="no">No</label>
+                        </div>
+                        </fieldset>
+                    </div>
+                    <div class="form-book">
+                      <input type="submit" value="Submit">
+                    </div>
             </div>
+            <button id="newBook" class="new-book">NEW BOOK</button>
         </div>
         <div class="footer">
             Copyright © 2022, O.W.
