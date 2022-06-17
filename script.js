@@ -79,6 +79,7 @@ const addBook = (e)=> {
     cardBox.classList.add('card-box');
     const content = document.createElement('div');
     content.classList.add(`card${i}`);
+    content.classList.add('card');
     content.textContent = ('Title: ' + book.title + '\n ' + 
     'Author: ' + book.author + '\n' + 
     'Pages: ' + book.pages + '\n' + 
@@ -86,6 +87,10 @@ const addBook = (e)=> {
 
     gridContainer.appendChild(cardBox);
     cardBox.appendChild(content);
+    const readBtn = document.createElement('button');
+    readBtn.classList.add('readBtn');
+    readBtn.textContent = 'Read';
+    cardBox.appendChild(readBtn);
     const deleteBook = document.createElement('button');
     deleteBook.classList.add('deleteBook');
     deleteBook.textContent = 'Remove';
@@ -102,7 +107,6 @@ const addBook = (e)=> {
   deleteBook.addEventListener('click', () => {
       cardBox.classList.add('card-box-delete');
     });
-
 }
 
 document.addEventListener('DOMContentLoaded', ()=>{
