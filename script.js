@@ -1,8 +1,5 @@
 const container = document.querySelector('#container');
 const gridContainer = document.querySelector('#gridContainer');
-const card1 = document.querySelector('#card1');
-const card2 = document.querySelector('#card2');
-const card3 = document.querySelector('#card3');
 
 let myLibrary = [];
 // Object Constructor to create book object
@@ -15,44 +12,11 @@ function Book(title, author, pages, read) {
         return(title + " by " + author + ", " + pages + ", " + read)
     }
 }
-// Example book objects to fill grid
-const book1 = new Book('The Hobbit', 'J.R.R. Tolkien', '295', 'Yes');
-const book2 = new Book('Book 2', 'Author 2', '345', 'No');
-const book3 = new Book('Book 3', 'Author 3', '445', 'No');
 
 function addBookToLibrary(book) {
     myLibrary.push(book);
 };
 
-addBookToLibrary(book1);
-addBookToLibrary(book2);
-addBookToLibrary(book3);
-console.log(myLibrary);
-// Add books to library array & display them on cards
-function displayLibrary(library) {  
-    library.forEach((obj) => {
-        let i = 0;
-        card1.textContent = ('Title: ' + library[i].title + '\n' + 
-        'Author: ' + library[i].author + '\n' + 
-        'Pages: ' + library[i].pages + '\n' + 
-        'Have Read?: ' + library[i].read);
-        console.log(obj);
-        i++;
-        console.log(i);
-        card2.textContent = ('Title: ' + library[i].title + '\n' + 
-        'Author: ' + library[i].author + '\n' + 
-        'Pages: ' + library[i].pages + '\n' + 
-        'Have Read?: ' + library[i].read);
-        i++;
-        card3.textContent = ('Title: ' + library[i].title + '\n' +
-        'Author: ' + library[i].author + '\n' +
-        'Pages: ' + library[i].pages + '\n' + 
-        'Have Read?: ' + library[i].read);
-        i++;
-    });
-}
-
-displayLibrary(myLibrary);
 // Hide form to create new book until button is clicked
 const btn = document.getElementById('newBook');
 btn.addEventListener('click', () => {
@@ -74,7 +38,7 @@ const addBook = (e)=> {
     addBookToLibrary(book);
     console.log(myLibrary);
     document.forms[0].reset();
-    let i = 4;
+    let i = 1;
     const cardBox = document.createElement('div');
     cardBox.classList.add('card-box');
     const content = document.createElement('div');
@@ -114,22 +78,7 @@ document.addEventListener('DOMContentLoaded', ()=>{
     submit.addEventListener('click', addBook);
 });
 
-const cardBox1 = document.getElementById('cardBox1');
-const cardBox2 = document.getElementById('cardBox2');
-const cardBox3 = document.getElementById('cardBox3');
 
-const deleteBook1 = document.getElementById('deleteBook1');
-deleteBook1.addEventListener('click', () => {
-    cardBox1.classList.add('card-box-delete');
-  });
-const deleteBook2 = document.getElementById('deleteBook2');
-deleteBook2.addEventListener('click', () => {
-    cardBox2.classList.add('card-box-delete');
-});
-const deleteBook3 = document.getElementById('deleteBook3');
-deleteBook3.addEventListener('click', () => {
-    cardBox3.classList.add('card-box-delete');
-  });
   
 
 
