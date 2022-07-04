@@ -1,17 +1,16 @@
 const container = document.querySelector('#container');
 const gridContainer = document.querySelector('#gridContainer');
-
 let myLibrary = [];
-// Object Constructor to create book object
-function Book(title, author, pages, read) {
-    this.title = title
-    this.author = author
-    this.pages = pages
-    this.read = read
-    this.info = function() {
-        return(title + " by " + author + ", " + pages + ", " + read)
-    }
-}
+
+const Book = function (title, author, length, status) {
+  const b = Object.create(bookProto);
+  return Object.assign(b, { title, author, length, status });
+};
+const bookProto = {
+  toggleStatus() {
+    this.status = !this.status;
+  }
+};
 
 function addBookToLibrary(book) {
     myLibrary.push(book);
@@ -33,7 +32,7 @@ const addBook = (e)=> {
     const book = new Book(document.getElementById('title').value, 
     document.getElementById('author').value, 
     document.getElementById('pages').value, 
-    document.querySelector('input[name="read"]:checked').value);
+    document.getElementById('status').value);
     
     addBookToLibrary(book);
     console.log(myLibrary);
@@ -46,8 +45,8 @@ const addBook = (e)=> {
     content.classList.add('card');
     content.textContent = ('Title: ' + book.title + '\n ' + 
     'Author: ' + book.author + '\n' + 
-    'Pages: ' + book.pages + '\n' + 
-    'Read: ' + book.read);
+    'Pages: ' + book.length + '\n' + 
+    'Read: ' + book.status);
 
     gridContainer.appendChild(cardBox);
     cardBox.appendChild(content);
@@ -71,6 +70,16 @@ const addBook = (e)=> {
   deleteBook.addEventListener('click', () => {
       cardBox.classList.add('card-box-delete');
     });
+    console.log(book.status);
+// Read button
+       readBtn.addEventListener('click', () => {
+        book.toggleStatus();
+        console.log(book.status);
+        content.textContent = ('Title: ' + book.title + '\n ' + 
+        'Author: ' + book.author + '\n' + 
+        'Pages: ' + book.length + '\n' + 
+        'Read: ' + book.status);
+});
 
 }
 
@@ -78,6 +87,11 @@ document.addEventListener('DOMContentLoaded', ()=>{
     const submit = document.getElementById('submit');
     submit.addEventListener('click', addBook);
 });
+
+
+
+
+
 
 
   

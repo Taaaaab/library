@@ -1,6 +1,7 @@
-body {  
+html, body {  
+    width: 100vw;
+    height: 100vh;
     margin: 0 auto;
-    width: 100%;
     background-color: hsl(0, 0%, 98%);
     color: #333;
     font: 100% / normal sans-serif;
@@ -68,10 +69,10 @@ input[type="submit"] {
   }
 
   .container {
-    height: 100vh;
+    min-height: 100vh;
     display: grid;
-    grid-template-columns: auto;
-    grid-template-rows: 1fr 2fr 1fr;
+    grid-template-rows: auto 1fr auto;
+    grid-template-columns: 100vw;
   }
 
 .header {

@@ -24,15 +24,11 @@
                       <label for="pages">Pages:</label>
                       <input type="text" name="pages" id="pages" required>
                         <fieldset>
-                        <legend>Have Read?:</legend>
-                        <div>
-                            <input type="radio" id="yes" value="Yes" name="read" checked>
-                            <label for="yes">Yes</label>
-                        </div>
-                        <div>
-                            <input type="radio" id="no" value="No" name="read">
-                            <label for="no">No</label>
-                        </div>
+                        <label for="status">Read Status</label>
+                        <select  id="status">
+                            <option value=true>Read</option>
+                            <option value=false>Unread</option>
+                        </select>
                         </fieldset>
                         <input type="submit" id="submit" value="Submit">
                     </div>
