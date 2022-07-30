@@ -2,15 +2,23 @@ const container = document.querySelector('#container');
 const gridContainer = document.querySelector('#gridContainer');
 let myLibrary = [];
 
-const Book = function (title, author, length, status) {
-  const b = Object.create(bookProto);
-  return Object.assign(b, { title, author, length, status });
-};
-const bookProto = {
-  toggleStatus() {
-    this.status = !this.status;
+class Book {
+  constructor(title, author, length, status) {
+    this.title = title;
+    this.author = author;
+    this.length = length;
+    this.status = status;
+
+    Book.prototype.toggleStatus = function () {
+      this.status = !this.status;
+    }
   }
-};
+}
+// const Book = function (title, author, length, status) {
+//   const b = Object.create(bookProto);
+//   return Object.assign(b, { title, author, length, status });
+// };
+
 
 function addBookToLibrary(book) {
     myLibrary.push(book);
