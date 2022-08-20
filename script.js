@@ -1,24 +1,17 @@
 const container = document.querySelector('#container');
 const gridContainer = document.querySelector('#gridContainer');
+const submitBtn = document.getElementById('submitBtn');
 let myLibrary = [];
 
-class Book {
-  constructor(title, author, length, status) {
-    this.title = title;
-    this.author = author;
-    this.length = length;
-    this.status = status;
-
-    Book.prototype.toggleStatus = function () {
-      this.status = !this.status;
-    }
+const Book = function (title, author, length, status) {
+  const b = Object.create(bookProto);
+  return Object.assign(b, { title, author, length, status });
+};
+const bookProto = {
+  toggleStatus() {
+    this.status = !this.status;
   }
-}
-// const Book = function (title, author, length, status) {
-//   const b = Object.create(bookProto);
-//   return Object.assign(b, { title, author, length, status });
-// };
-
+};
 
 function addBookToLibrary(book) {
     myLibrary.push(book);
@@ -91,23 +84,10 @@ const addBook = (e)=> {
 
 }
 
-document.addEventListener('DOMContentLoaded', ()=>{
-    const submit = document.getElementById('submit');
-    submit.addEventListener('click', addBook);
+document.addEventListener('DOMContentLoaded', ()=> {
+    submitBtn.addEventListener('click', addBook);
 });
 
-const title = document.getElementById("title");
-const author = document.getElementById("author");
-const pages = document.getElementById("pages");
-
-title.addEventListener("input", (event) => {
-  if (title.validity.typeMismatch) {
-    title.setCustomValidity("Please enter a book title");
-    title.reportValidity();
-  } else {
-    title.setCustomValidity("");
-  }
-});
 
 
 
@@ -115,5 +95,4 @@ title.addEventListener("input", (event) => {
 
 
   
-
 

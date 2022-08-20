@@ -1,6 +1,7 @@
 html, body {  
     width: 100vw;
     height: 100vh;
+    padding: 0;
     margin: 0 auto;
     background-color: hsl(0, 0%, 98%);
     color: #333;
@@ -9,8 +10,7 @@ html, body {
     font-weight: bold;
   }
 
-  button,
-  fieldset,
+  fieldset
   input[type="text"],
   legend,
   select,
@@ -18,12 +18,43 @@ html, body {
     -webkit-appearance: none;
     -moz-appearance: none;
     appearance: none;
-    background-color: transparent;
-    border: none;
-    padding: 0;
+    
+    width: 100%;
+    border: 1px solid #333;
     margin: 0;
+
+    font-family: inherit;
+    font-size: 90%;
+
     box-sizing: border-box;
   }
+
+  /* This is our style for the invalid fields */
+input:invalid{
+  border-color: #900;
+  background-color: #FDD;
+}
+
+input:focus:invalid {
+  outline: none;
+}
+
+/* This is the style of our error messages */
+.error {
+  width  : 100%;
+  padding: 0;
+
+  font-size: 80%;
+  color: white;
+  background-color: #900;
+  border-radius: 0 0 5px 5px;
+
+  box-sizing: border-box;
+}
+
+.error.active {
+  padding: 0.3em;
+}
 
 input[type="text"],
 select {
@@ -48,24 +79,18 @@ input:focus {
     box-shadow: 0 2px 4px 0 #999;
   }
 
-input[type="submit"] {
-    font: 1rem sans-serif;
-    font-weight: bold;
-    border-radius: 0.5rem;
-    cursor: pointer;
-    padding: 0.5rem 1.5rem;
-    margin-top: 1.5rem;
-    margin-bottom: 0.5rem;
-  }
-
-  input[type="submit"] {
-    background-color: lightseagreen;
-    border: 1px solid rgb(217, 217, 217);
+  .submitbtn {
+    background-color: #04AA6D;
     color: white;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
   }
-
-  input[type="submit"]:hover {
-    background-color: rgb(65, 205, 198);
+  
+  .submitbtn:hover, .submitbtn:focus {
+    background-color: #3e8e41;
   }
 
   .container {

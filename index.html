@@ -16,17 +16,22 @@
         <div class="body">
             <div id="gridContainer" class="grid-container">
                 <form novalidate>
-                    <p>
-                        <div id="myForm" class="myForm" style="display: none">
+                    <div id="myForm" class="myForm" style="display: none">
                         <label for="title">
                             <span>Book Title:</span>
                             <input type="text" name="title" id="title" required minlength="1">
                             <span class="error" aria-live="polite"></span>
                         </label>
-                            <label for="author">Author:</label>
+                        <label for="author">
+                            <span>Author:</span>
                             <input type="text" name="author" id="author" required>
-                            <label for="pages">Pages:</label>
-                        <input type="text" name="pages" id="pages" required>
+                            <span class="error" aria-live="polite"></span>
+                        </label>
+                        <label for="pages">
+                            <span>Pages:</span>
+                            <input type="text" name="pages" id="pages" required>
+                            <span class="error" aria-live="polite"></span>
+                        </label>
                             <fieldset>
                             <label for="status">Read Status</label>
                             <select  id="status">
@@ -34,22 +39,10 @@
                                 <option value=false>Unread</option>
                             </select>
                             </fieldset>
-                            <input type="submit" id="submit" value="Submit">
-                        </div>
-                    </p>
-                </form>
-                <form novalidate>
-                    <p>
-                      <label for="mail">
-                        <span>Please enter an email address:</span>
-                        <input type="email" id="mail" name="mail" required minlength="8">
-                        <span class="error" aria-live="polite"></span>
-                      </label>
-                    </p>
-                    <button>Submit</button>
-                  </form>
-                  
-         </div>
+                        <button id="submitBtn" class="submitbtn">Submit</button>
+                    </div>
+                </form>              
+            </div>
          <div> 
             <button id="newBook" class="new-book">NEW BOOK</button>
         </div>
