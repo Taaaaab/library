@@ -96,6 +96,18 @@ document.addEventListener('DOMContentLoaded', ()=>{
     submit.addEventListener('click', addBook);
 });
 
+const title = document.getElementById("title");
+const author = document.getElementById("author");
+const pages = document.getElementById("pages");
+
+title.addEventListener("input", (event) => {
+  if (title.validity.typeMismatch) {
+    title.setCustomValidity("Please enter a book title");
+    title.reportValidity();
+  } else {
+    title.setCustomValidity("");
+  }
+});
 
 
 

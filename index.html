@@ -15,24 +15,40 @@
         </div>
         <div class="body">
             <div id="gridContainer" class="grid-container">
-                <form>
-                    <div id="myForm" class="myForm" style="display: none">
-                      <label for="title">Title:</label>
-                      <input type="text" name="title" id="title" required>
-                      <label for="author">Author:</label>
-                      <input type="text" name="author" id="author" required>
-                      <label for="pages">Pages:</label>
-                      <input type="text" name="pages" id="pages" required>
-                        <fieldset>
-                        <label for="status">Read Status</label>
-                        <select  id="status">
-                            <option value=true>Read</option>
-                            <option value=false>Unread</option>
-                        </select>
-                        </fieldset>
-                        <input type="submit" id="submit" value="Submit">
-                    </div>
+                <form novalidate>
+                    <p>
+                        <div id="myForm" class="myForm" style="display: none">
+                        <label for="title">
+                            <span>Book Title:</span>
+                            <input type="text" name="title" id="title" required minlength="1">
+                            <span class="error" aria-live="polite"></span>
+                        </label>
+                            <label for="author">Author:</label>
+                            <input type="text" name="author" id="author" required>
+                            <label for="pages">Pages:</label>
+                        <input type="text" name="pages" id="pages" required>
+                            <fieldset>
+                            <label for="status">Read Status</label>
+                            <select  id="status">
+                                <option value=true>Read</option>
+                                <option value=false>Unread</option>
+                            </select>
+                            </fieldset>
+                            <input type="submit" id="submit" value="Submit">
+                        </div>
+                    </p>
                 </form>
+                <form novalidate>
+                    <p>
+                      <label for="mail">
+                        <span>Please enter an email address:</span>
+                        <input type="email" id="mail" name="mail" required minlength="8">
+                        <span class="error" aria-live="polite"></span>
+                      </label>
+                    </p>
+                    <button>Submit</button>
+                  </form>
+                  
          </div>
          <div> 
             <button id="newBook" class="new-book">NEW BOOK</button>
