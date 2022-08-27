@@ -15,23 +15,21 @@
         </div>
         <div class="body">
             <div id="gridContainer" class="grid-container">
-                <form novalidate>
+                <div id="error" class="error"></div>
+                <form>
                     <div id="myForm" class="myForm" style="display: none">
-                        <label for="title">
-                            <span>Book Title:</span>
-                            <input type="text" name="title" id="title" required minlength="1">
-                            <span class="error" aria-live="polite"></span>
-                        </label>
-                        <label for="author">
-                            <span>Author:</span>
-                            <input type="text" name="author" id="author" required>
-                            <span class="error" aria-live="polite"></span>
-                        </label>
-                        <label for="pages">
-                            <span>Pages:</span>
-                            <input type="text" name="pages" id="pages" required>
-                            <span class="error" aria-live="polite"></span>
-                        </label>
+                        <div>
+                            <label for="title">Book Title:</label>
+                            <input id="title" name="title" type="text" required>
+                        </div>
+                        <div>
+                            <label for="author">Author:</label>
+                            <input id="author" name="author" type="text" required>
+                        </div>
+                        <div>
+                            <label for="pages">Pages:</label>
+                            <input id="pages" name="pages" type="text" required>
+                        </div>
                             <fieldset>
                             <label for="status">Read Status</label>
                             <select  id="status">
@@ -39,7 +37,7 @@
                                 <option value=false>Unread</option>
                             </select>
                             </fieldset>
-                        <button id="submitBtn" class="submitbtn">Submit</button>
+                        <button type="submit" id="submitBtn">Submit</button>
                     </div>
                 </form>              
             </div>
