@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Library</title>
+    <link rel="stylesheet" href="../src/style.css">
+</head>
+<body>
+    <div id="container" class="container">
+        <header class="header">Library</header>
+        <div id="gridContainer" class="grid-container">
+            <div id="error" class="error"></div>
+            <form class="add">
+                <div id="myForm" class="myForm" style="display: none">
+                        <label for="title">Book Title:</label>
+                        <input type="text" id="title" name="title" required>
+                        <label for="author">Author:</label>
+                        <input type="text" id="author" name="author" required>
+                        <label for="pages">Pages:</label>
+                        <input id="pages" name="pages" type="text" required>
+                        <fieldset>
+                            <label for="status">Read Status</label>
+                            <select  id="status">
+                                <option value=true>Read</option>
+                                <option value=false>Unread</option>
+                            </select>
+                        </fieldset>
+                    <button type="submit" id="submitBtn">Submit</button>
+                </div>
+            </form>              
+        </div>    
+        <button class="newBookBtn">NEW BOOK</button>
+    </div>
+    <div class="footer">Copyright © 2022, O.W.</div>
+    <script src="bundle.js" defer></script>
+</body>
+</html>
