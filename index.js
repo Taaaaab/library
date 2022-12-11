@@ -1,35 +1,35 @@
-import { initializeApp } from 'firebase/app';
-import { getFirestore, collection, getDocs, addDoc } from 'firebase/firestore/lite';
-// Follow this pattern to import other Firebase services
-// import { } from 'firebase/<service>';
+// import { initializeApp } from 'firebase/app';
+// import { getFirestore, collection, getDocs, addDoc } from 'firebase/firestore/lite';
+// // Follow this pattern to import other Firebase services
+// // import { } from 'firebase/<service>';
 
-const firebaseConfig = {
-  apiKey: "AIzaSyArIQrEPVHg_NRlU0U_ir1XSPw42pH5ppM",
-  authDomain: "library-d58dc.firebaseapp.com",
-  projectId: "library-d58dc",
-  storageBucket: "library-d58dc.appspot.com",
-  messagingSenderId: "1067687580111",
-  appId: "1:1067687580111:web:cffb1a845276a6ace5c2ba"
-};
+// const firebaseConfig = {
+//   apiKey: "AIzaSyArIQrEPVHg_NRlU0U_ir1XSPw42pH5ppM",
+//   authDomain: "library-d58dc.firebaseapp.com",
+//   projectId: "library-d58dc",
+//   storageBucket: "library-d58dc.appspot.com",
+//   messagingSenderId: "1067687580111",
+//   appId: "1:1067687580111:web:cffb1a845276a6ace5c2ba"
+// };
 
-const app = initializeApp(firebaseConfig);
-initializeApp(firebaseConfig);
+// const app = initializeApp(firebaseConfig);
+// initializeApp(firebaseConfig);
 
-const db = getFirestore();
-const colRef = collection(db, 'books')
+// const db = getFirestore();
+// const colRef = collection(db, 'books')
 
-// get collection data
-getDocs(colRef)
-  .then((snapshot) => {
-    let books = []
-    snapshot.docs.forEach((doc) => {
-      books.push({ ...doc.data(), id: doc.id })
-    })
-    console.log(books)
-  })
-  .catch(err => {
-    console.log(err.message)
-  })
+// // get collection data
+// getDocs(colRef)
+//   .then((snapshot) => {
+//     let books = []
+//     snapshot.docs.forEach((doc) => {
+//       books.push({ ...doc.data(), id: doc.id })
+//     })
+//     console.log(books)
+//   })
+//   .catch(err => {
+//     console.log(err.message)
+//   })
 
 
 const gridContainer = document.querySelector('#gridContainer');
