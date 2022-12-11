@@ -1,14 +1,11 @@
 {
-  "homepage": "https://taaaaab.github.io/library",
   "name": "library",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "webpack",
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d build"
+    "build": "webpack"
   },
   "repository": {
     "type": "git",
