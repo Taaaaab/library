@@ -73,19 +73,6 @@ const addBook = (e) => {
     addBookForm.status.value);
     // add book element to array
     addBookToLibrary(book);
-    // console.log(myLibrary);
-    
-    // add book to firebase using addDoc function
-    // addDoc(colRef, {
-    //   title: addBookForm.title.value,
-    //   author: addBookForm.author.value,
-    //   pages: addBookForm.pages.value,
-    //   status: addBookForm.status.value,
-    // })
-    // // reset form
-    // .then(() => {
-    //   addBookForm.reset()
-    // })
     
     // add DOM element for book
     let i = 1;
