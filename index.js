@@ -81,10 +81,13 @@ const addBook = (e) => {
     const content = document.createElement('div');
     content.classList.add(`card${i}`);
     content.classList.add('card');
-    content.textContent = ('Title: ' + book.title + '\n ' + 
-    'Author: ' + book.author + '\n' + 
-    'Pages: ' + book.length + '\n' + 
-    'Read: ' + book.status);
+    contentMarkup = `<ul>
+    <li>Title: ${book.title}</li>
+    <li>Author: ${book.author}</li>
+    <li>Pages: ${book.length}</li>
+    <li>Read: ${book.status}</li>
+    </ul>`;
+    content.insertAdjacentHTML('beforeend', contentMarkup);
 
     gridContainer.appendChild(cardBox);
     cardBox.appendChild(content);
